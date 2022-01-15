@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>view each note Page</title>
+    <link rel="stylesheet" type="text/css" media="all" href="../static/css/style.css" th:href="@{/css/style.css}">
+</head>
+
+<body>
+    <header>
+
+    </header>
+    <main>
+        <!--fix!-->
+        <form action="#" th:action="@{/editNote}" method="post">
+            <p th:text="|Title: ${}|">Title</p>
+            <p th:text="|Date: ${}|">Date</p>
+            <p th:text="|Course: ${}|">Course</p>
+            <p th:text="|Note: ${}|">Note</p>
+            <input type="submit" value="Edit">
+        </form>
+        <p><a href="/">Back to home</a></p>
+    </main>
+    <footer>The footer</footer>
+</body>
+
+</html>
