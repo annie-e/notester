@@ -1,5 +1,5 @@
 <!--Hackville Project - Notester Html File - Add Note Page
-----Created by: Xiaoya Zou & Mihye Bang from Team Hamstarz
+----Created by: Team Hamstarz
 ----Created on: Jan 14-15, 2022
 -->
 <!DOCTYPE html>
@@ -17,18 +17,28 @@
 
     </header>
     <main>
-        <div>
+        <div class="container-list-page">
             <form action="#" th:action="@{/redirect:/addNote}" method="post" th:object="${note}">
-                <p>Title: <input type="text" th:field="*{title}"></p>
-                <p>Date: <input type="text" th:field="*{date}"></p>
-                <p>Course: <input type="text" th:field="*{course}"></p>
-                <p>Note:</p>
-                <textarea>Add a note here...</textarea><br>
+                <table>
+                <tr><td>Title: </td>
+                    <td><input type="text" th:field="*{title}"></td></tr>
+                <tr>
+                    <td>Date: </td>
+                    <td><input type="text" th:field="*{date}"></td>
+                </tr>
+                <tr>
+                    <td>Course: </td>
+                    <td><input type="text" th:field="*{course}"></td>
+                </tr>
+                <tr><td>Note: </td>
+                    <td><textarea id="notes-area">Add a note here...</textarea><br></td>
+                </tr>
+                </table>
                 <input type="submit" value="Save">
-                <button type="button">Cancel</button>
+                <input type="button" value="Cancel">
+                <p><a href="index.html">Back to home</a></p>
             </form>
         </div>
-        <p><a href="/">Back to home</a></p>
     </main>
     <footer>The footer</footer>
 </body>
