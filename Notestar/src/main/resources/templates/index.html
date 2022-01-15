@@ -1,16 +1,26 @@
 <!DOCTYPE html>
-<html lang="en" 
-xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-<link rel="stylesheet" type="text/css" media="all"
-	href="../static/css/style.css"
-	th:href="@{/css/style.css}">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Index Page</title>
+    <link rel="stylesheet" type="text/css" media="all" href="../static/css/style.css" th:href="@{/css/style.css}">
 </head>
+
 <body>
-
-Hello Hamstarz!
-
+    <header>
+        <nav>
+            <a href="#" th:href="@{/addNote}">Add new note</a><br>
+            <a href="#">View notes</a><br>
+            <a href="#">Become a member</a><br>
+        </nav>
+    </header>
+    <main>
+        <p>Description about the app</p>
+    </main>
+    <footer>The footer</footer>
 </body>
+
 </html>

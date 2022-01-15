@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>add note Page</title>
+    <link rel="stylesheet" type="text/css" media="all" href="../static/css/style.css" th:href="@{/css/style.css}">
+</head>
+
+<body>
+    <header>
+
+    </header>
+    <main>
+        <div>
+            <form action="#" th:action="@{/redirect:/addNote}" method="post" th:object="${note}">
+                <p>Title: <input type="text" th:field="*{title}"></p>
+                <p>Date: <input type="text" th:field="*{date}"></p>
+                <p>Course: <input type="text" th:field="*{course}"></p>
+                <p>Note:</p>
+                <textarea>Add a note here...</textarea><br>
+                <input type="submit" value="Save">
+                <button type="button">Cancel</button>
+            </form>
+        </div>
+        <p><a href="/">Back to home</a></p>
+    </main>
+    <footer>The footer</footer>
+</body>
+
+</html>
