@@ -6,12 +6,9 @@
 
 package ca.hackville.hamstarz.repositories;
 
-import ca.hackville.hamstarz.beans.Note;
-import java.util.List;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface NoteRepository extends CrudRepository<Note, Integer> {
-    List<Note> findByCourseCode(String code);
+public class NoteJdbc {
+
 }

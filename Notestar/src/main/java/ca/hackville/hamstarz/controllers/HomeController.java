@@ -32,7 +32,7 @@ public class HomeController {
     @RequestMapping(value = "/addNote", params = "save")
     public String addNewNote(@ModelAttribute Note note){
         noteRepo.save(note);
-        return "redirect:/addnote";
+        return "redirect:/addNote";
     }
     
     @RequestMapping(value = "/addNote", params = "cancel")
@@ -40,10 +40,17 @@ public class HomeController {
         return "redirect:/";
     }
             
-    @GetMapping("/viewNote")
+    @RequestMapping("/viewNote")
     public String goViewNote(Model model) {
         model.addAttribute("notes", noteRepo.findAll());
         return "viewNote";
+    }
+    
+    @RequestMapping(value = "/viewNote", params = "code")
+    public String goSortedNote(Model model, @RequestParam String courseCode){
+        model.addAttribute("sortedNotes", noteRepo.findByCourseCode(courseCode));
+        model.addAttribute("notes", noteRepo.findAll());
+        return "sortedNotes";
     }
     
     @RequestMapping(value = "/viewNote", params = "view")
@@ -60,9 +67,21 @@ public class HomeController {
         return "editnote";
     }
     
+    @RequestMapping(value = "/editNote", params = "save")
+    public String saveEditedNote(@ModelAttribute Note editnote){
+        noteRepo.save(editnote);
+        return "redirect:/viewNote?noteId="+ editnote.getId()+"&view=View+Note";
+    }
+    
+    @RequestMapping(value = "/editNote", params = "cancel")
+    public String editCancel(@ModelAttribute Note editnote){
+        return "redirect:/viewNote?noteId="+ editnote.getId()+"&view=View+Note";
+    }
+    
     @RequestMapping(value = "/updateNote", params = "delete")
-    public String deleteNote(Model model, @ModelAttribute Note note){
-        noteRepo.delete(note);
+    public String deleteNote(@RequestParam int noteId){
+        Note deleteNote = noteRepo.findById(noteId).get();
+        noteRepo.delete(deleteNote);
         return "redirect:/viewNote";
     }
 }

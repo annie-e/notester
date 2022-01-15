@@ -1,55 +1,50 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
-    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>view note Page</title>
-    <link rel="stylesheet" type="text/css" media="all" href="../static/css/style.css" th:href="@{/css/style.css}">
-</head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>view note Page</title>
+        <link rel="stylesheet" type="text/css" media="all" href="../static/css/style.css" th:href="@{/css/style.css}">
+    </head>
 
-<body>
-    <header>
-        <!--I am not sure about this part how to display the courses as navigation
-        <nav th:each="course: ${courses}">
-            <a href="#" th:text="${course}">Course names</a>
-        </nav>-->
-    </header>
-    <main>
-        <form method="get" action="" th:action="@{/viewNote}">
-            <div th:each="n: ${notes}">
+    <body>
+        <header>
+                <nav th:each="note: ${notes}">
+                    <form method="get" action="" th:action="@{/viewNote}">
+                        <input type="submit" th:value="${note.courseCode}" name="code"/>
+                        <input type="hidden" name="courseCode" th:value="${note.courseCode}"/>
+                    </form>
+                </nav>
+            
+        </header>
+        <main>
             <table>
                 <tr>
                     <th>Title</th>
-                    <td th:text="${n.title}"></td>
-                </tr>
-                <tr>
                     <th>Date</th>
-                    <td th:text="${n.date}"></td>
-                </tr>
-                <tr>
                     <th>Course Name</th>
-                    <td th:text="${n.courseName}"></td>
-                </tr>
-                <tr>
                     <th>Course Code</th>
+                </tr>
+                <tr th:each="n: ${sortedNotes}">
+                    <td th:text="${n.title}"></td>
+                    <td th:text="${n.date}"></td>
+                    <td th:text="${n.courseName}"></td>
                     <td th:text="${n.courseCode}"></td>
-                </tr>
-                <tr>
-                    <th>Note</th>
-                    <td th:text="${n.notes}"></td>
-                </tr>
-                <input type="hidden" name="noteId" th:value="${n.id}"/>
-                <input type="submit" value="View Note" name="view">  
+                    <td>
+                        <form method="get" action="" th:action="@{/viewNote}">
+                            <input type="hidden" name="noteId" th:value="${n.id}"/>
+                            <input type="submit" value="View Note" name="view">
+                        </form>
+                    </td>
+                 </tr>
             </table>
-                </div>
-        </form>        
-            
-        <p><a href="/">Back to home</a></p>
-    </main>
-    <footer>The footer</footer>
-</body>
 
+            <p><a href="/">Back to home</a></p>
+        </main>
+        
+        <footer>The footer</footer>
+    </body>
 </html>
