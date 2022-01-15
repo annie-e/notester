@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class HomeController {
@@ -41,5 +42,18 @@ public class HomeController {
     public String goViewNote(Model model) {
         model.addAttribute("note", noteRepo.findAll());
         return "viewNote";
+    }
+    
+    @RequestMapping(value = "/viewNote", params = "edit")
+    public String editNote(Model model, @RequestParam int noteId){
+        Note editNote = noteRepo.findById(noteId).get();
+        model.addAttribute("editnote", editNote);
+        return "editnote";
+    }
+    
+    @RequestMapping(value = "/viewNote", params = "delete")
+    public String deleteNote(Model model, @ModelAttribute Note note){
+        noteRepo.delete(note);
+        return "redirect:/viewNote";
     }
 }

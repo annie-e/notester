@@ -21,40 +21,12 @@
     </header>
     <main>
         <!-- need to fix the logic-->
-        <div th:object="${note}">
-            <ul>
-                <li th:text="${note.title}">title</li>
-                <li th:text="${note.date}">date</li>
-                <li th:text="${note.content}">note</li>
-            </ul>
-            <a href="#" th:href="@{/viewEachNote}">view</a>
+        <div th:each="n:${note}" class="notelist">
+            <p th:text="${n.date}">Date</p>
+            <h3 th:text="${n.course.courseCode}"></h3>
+            <h3 th:text="*{n.course.courseName}">Course Code Course Name</h3>
         </div>
-
-        <div class="notelist">
-            <p>Date</p>
-            <h3>Course Code Course Name</h3>
-        </div>
-
-        <div class="notelist">
-            <p>Date</p>
-            <h3>Course Code Course Name</h3>
-        </div>
-
-        <div class="notelist">
-            <p>Date</p>
-            <h3>Course Code Course Name</h3>
-        </div>
-
-        <div class="notelist">
-            <p>Date</p>
-            <h3>Course Code Course Name</h3>
-        </div>
-
-        <div class="notelist">
-            <p>Date</p>
-            <h3>Course Code Course Name</h3>
-        </div>
-
+        
         <p><a href="/">Back to home</a></p>
     </main>
     <footer>The footer</footer>

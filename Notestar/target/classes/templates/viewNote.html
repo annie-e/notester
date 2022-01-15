@@ -12,20 +12,23 @@
 <body>
     <header>
         <!--I am not sure about this part how to display the courses as navigation-->
-        <nav th:each="course : ${courses}">
+        <nav th:each="course: ${courses}">
             <a href="#" th:text="${course}">Course names</a>
         </nav>
     </header>
     <main>
-        <!-- need to fix the logic-->
-        <div th:object="${note}">
-            <ul>
-                <li th:text="${note.title}">title</li>
-                <li th:text="${note.date}">date</li>
-                <li th:text="${note.content}">note</li>
-            </ul>
-            <a href="#" th:href="@{/viewEachNote}">view</a>
-        </div>
+        <form action="#" th:action="@{/viewNote}" method="get" th:object="${note}">
+                <br/> Title: <span th:text="*{title}"></span>
+                <br/> Date: <span th:text="*{date}"></span>  
+                <br/> Course Name: <span th:text="*{course.courseName}"></span>  
+                <br/> Course Code: <span th:text="*{course.courseCode}"></span>     
+                <br/> Note: <br/> <span th:text="*{notes}"></span>   
+                
+                <input type="hidden" name="noteId" th:value="*{id}"/>
+                <input type="submit" value="Edit" name="edit">
+                <input type="submit" value="Delete" name="delete">   
+        </form>        
+            
         <p><a href="/">Back to home</a></p>
     </main>
     <footer>The footer</footer>
