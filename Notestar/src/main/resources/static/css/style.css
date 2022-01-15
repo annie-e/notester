@@ -33,6 +33,13 @@ nav ul li {
   margin: 0px 20px;
 }
 
+.notelist-nav {
+  text-align: center;
+  font-size: 25px;
+  color: #484646;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
 .index-description {
   margin-left: 5%;
   font-style: normal;
@@ -80,6 +87,11 @@ nav ul li {
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
+}
+
+.container-list-page {
+  margin-top: 50px;
+  margin-left: 40%;
 }
 
 button {
