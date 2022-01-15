@@ -2,6 +2,7 @@ package ca.hackville.hamstarz.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -28,9 +29,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			.authorizeRequests()
 				.antMatchers("/adminPage").hasRole("ADMIN")
 				.antMatchers("/userPage").hasRole("USER")
-				.antMatchers("/", "/images/**", "/css/**").permitAll()
+				.antMatchers("/","/register", "/images/**", "/css/**").permitAll()
 				.antMatchers("/h2-console/**").permitAll()
-				.antMatchers(HttpMethod.POST, "/addUser").permitAll() 
+				.antMatchers(HttpMethod.POST, "/register").permitAll() 
 				.anyRequest().authenticated()
 			.and()
 				.formLogin()
@@ -47,18 +48,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 					.accessDeniedHandler(accessDeniedHandler);
 	}
 	
-//	@Bean
-//	public BCryptPasswordEncoder passwordEncoder() {
-//		return new BCryptPasswordEncoder();
-//	}
-//	
-//	@Autowired
-//	private UserDetailsServiceImpl userDetailsService;
-//	
-//	@Autowired
-//	public void conigureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-//		
-//		auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
-//	}
+	@Bean
+	public BCryptPasswordEncoder passwordEncoder() {
+		return new BCryptPasswordEncoder();
+	}
+	
+	@Autowired
+	private UserDetailsServiceImpl userDetailsService;
+	
+	@Autowired
+	public void conigureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+		
+		auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
+	}
 
 }

@@ -31,7 +31,12 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 
 			<input type="submit" value="Login">
 		</form>
+		
+		<div>Forget your password? <a th:href="@{#}">Click Here</a></div>
+		<div>Don't have an account? <a th:href="@{/register}">Sign Up</a></div>
 	</div>
+	
+	
 	
 	<div sec:authorize="isAuthenticated()">
 		You have been logged in<br>
