@@ -18,14 +18,15 @@
     </header>
     <main>
         <div>
-            <form action="#" th:action="@{/redirect:/addNote}" method="post" th:object="${note}">
+            <form action="#" th:action="@{/addNote}" method="post" th:object="${note}">
                 <p>Title: <input type="text" th:field="*{title}"></p>
                 <p>Date: <input type="text" th:field="*{date}"></p>
-                <p>Course: <input type="text" th:field="*{course}"></p>
+                <p>Course Name: <input type="text" th:field="*{course.courseName}"></p>
+                <p>Course Code: <input type="text" th:field="*{course.courseCode}"></p>
                 <p>Note:</p>
-                <textarea>Add a note here...</textarea><br>
-                <input type="submit" value="Save">
-                <button type="button">Cancel</button>
+                <textarea th:field="*{notes}">Add a note here...</textarea><br>
+                <input type="submit" value="Save" name="save">
+                <input type="submit" value="Cancel" name="save">
             </form>
         </div>
         <p><a href="/">Back to home</a></p>

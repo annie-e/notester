@@ -1,8 +1,8 @@
 package ca.hackville.hamstarz.repositories;
 
-import org.springframework.stereotype.Repository;
+import ca.hackville.hamstarz.beans.Note;
+import org.springframework.data.repository.CrudRepository;
 
-@Repository
-public class NoteRepository {
+public interface NoteRepository extends CrudRepository<Note, Integer>{
 
 }

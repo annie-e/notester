@@ -1,8 +1,8 @@
 package ca.hackville.hamstarz.repositories;
 
-import org.springframework.stereotype.Repository;
+import ca.hackville.hamstarz.beans.Course;
+import org.springframework.data.repository.CrudRepository;
 
-@Repository
-public class CourseRepository {
+public interface CourseRepository extends CrudRepository<Course, Integer>{
 
 }

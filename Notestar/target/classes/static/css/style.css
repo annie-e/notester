@@ -1,1 +1,116 @@
-@charset "ISO-8859-1";
+.index-screen {
+  align-items: flex-start;
+  display: flex;
+  width: 100%;
+  font-family: Sometype Mono;
+  color: #484646;
+  background-color: rgb(255, 255, 255);
+}
+
+.index-left {
+  height: 1024px;
+  width: 50%;
+  float: left;
+  position: absolute;
+}
+
+.navbar {
+  width: 100%;
+  height: 15vh;
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+
+nav {
+  flex: 1;
+  padding-left: 200px;
+}
+
+nav ul li {
+  display: inline-block;
+  list-style: none;
+  margin: 0px 20px;
+}
+
+.index-description {
+  margin-left: 5%;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 27px;
+  color: #484646;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.index-hammie-img {
+  margin-top: 15%;
+  margin-left: 20%;
+}
+
+.index-right {
+  margin-left: 50%;
+  height: 1024px;
+  object-fit: cover;
+  position: relative;
+}
+
+.index-footer {
+  font-style: normal;
+  padding-left: 250px;
+}
+
+.sub-screen {
+  background-color: #dfd3c1;
+  color: #484646;
+  font-family: Sometype Mono;
+}
+
+.container-signup-credentials,
+.container-login-credentials {
+  padding: 400px;
+}
+
+.credential-box {
+  text-align: center;
+  width: 500px;
+  padding: 12px 20px;
+  margin-left: 40%;
+  margin-bottom: 10px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  text-align: center;
+  width: 500px;
+  padding: 12px 20px;
+  margin-left: 40%;
+  margin-bottom: 10px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  color: #ffffff;
+  background-color: rgb(151, 102, 113);
+  box-sizing: border-box;
+}
+
+button:hover {
+  opacity: 0.7;
+}
+
+.notelist {
+  background-color: #ece7de;
+  border: 1px solid rgb(153, 153, 153);
+  margin: 30px;
+  padding: 20px;
+}
+
+.container-note-detail {
+}
+
+#notes-area {
+  width: 30%;
+  padding: 100px;
+  margin-top: 5px;
+}
