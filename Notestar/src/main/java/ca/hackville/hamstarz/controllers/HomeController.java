@@ -23,6 +23,21 @@ public class HomeController {
         return "index";
     }
     
+    @GetMapping("/login")
+    public String goLogin() {
+        return "login";
+    }
+    
+    @GetMapping("/signup")
+    public String goSignUp() {
+        return "signup";
+    }
+    
+    @GetMapping("/userIndex")
+    public String goUserIndex() {
+        return "userIndex";
+    }
+    
     @RequestMapping("/addNote")
     public String goAddNote(Model model){
         model.addAttribute("note", new Note());
