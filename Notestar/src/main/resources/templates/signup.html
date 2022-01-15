@@ -1,0 +1,29 @@
+<!--Hackville Project - Notester Html File - Sign Up Page
+----Created by: Xiaoya Zou & Mihye Bang from Team Hamstarz
+----Created on: Jan 14-15, 2022
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+    <title>Sign Up Page</title>
+    <link rel="stylesheet" type="text/css" media="all" href="../static/css/style.css" th:href="@{/css/style.css}">
+    </link>
+</head>
+
+<body class="sub-screen">
+
+    <div class="signup-credentials">
+                <form>
+                    <input type="text" class="credential-box" id="signup-email" value="Email"><br />
+                    <input type="text" class="credential-box" id="signup-username" value="Username"><br />
+                    <input type="text" class="credential-box" id="signup-password" value="Password"><br />
+                    <input type="text" class="credential-box" id="signup-password" value="Repeat Your Password"><br />
+                    <input type="button" id="btn-cancel" value="Cancel">
+                    <input type="button" id="btn-signup" value="Sign Up">
+                </form>
+    </div>
+</body>
+
+</html>
