@@ -1,5 +1,6 @@
 package ca.hackville.hamstarz.controllers;
 
+
 import ca.hackville.hamstarz.beans.Note;
 import ca.hackville.hamstarz.repositories.NoteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,7 @@ public class HomeController {
     @Autowired
     NoteRepository noteRepo;
     
+    
     @GetMapping("/")
     public String goHome() {
         return "index";
@@ -23,7 +25,7 @@ public class HomeController {
     
     @RequestMapping("/addNote")
     public String goAddNote(Model model){
-        model.addAttribute("newNote", new Note());
+        model.addAttribute("note", new Note());
         return "addnote";
     }
     
@@ -40,18 +42,25 @@ public class HomeController {
             
     @GetMapping("/viewNote")
     public String goViewNote(Model model) {
-        model.addAttribute("note", noteRepo.findAll());
+        model.addAttribute("notes", noteRepo.findAll());
         return "viewNote";
     }
     
-    @RequestMapping(value = "/viewNote", params = "edit")
+    @RequestMapping(value = "/viewNote", params = "view")
+    public String goIndividualNote(Model model, @RequestParam int noteId){
+        Note viewNote = noteRepo.findById(noteId).get();
+        model.addAttribute("viewNote", viewNote);
+        return "viewIndividualNote";
+    }
+    
+    @RequestMapping(value = "/updateNote", params = "edit")
     public String editNote(Model model, @RequestParam int noteId){
         Note editNote = noteRepo.findById(noteId).get();
         model.addAttribute("editnote", editNote);
         return "editnote";
     }
     
-    @RequestMapping(value = "/viewNote", params = "delete")
+    @RequestMapping(value = "/updateNote", params = "delete")
     public String deleteNote(Model model, @ModelAttribute Note note){
         noteRepo.delete(note);
         return "redirect:/viewNote";

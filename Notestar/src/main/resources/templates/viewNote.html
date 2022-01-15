@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 
 <head>
     <meta charset="UTF-8" />
@@ -11,22 +12,39 @@
 
 <body>
     <header>
-        <!--I am not sure about this part how to display the courses as navigation-->
+        <!--I am not sure about this part how to display the courses as navigation
         <nav th:each="course: ${courses}">
             <a href="#" th:text="${course}">Course names</a>
-        </nav>
+        </nav>-->
     </header>
     <main>
-        <form action="#" th:action="@{/viewNote}" method="get" th:object="${note}">
-                <br/> Title: <span th:text="*{title}"></span>
-                <br/> Date: <span th:text="*{date}"></span>  
-                <br/> Course Name: <span th:text="*{course.courseName}"></span>  
-                <br/> Course Code: <span th:text="*{course.courseCode}"></span>     
-                <br/> Note: <br/> <span th:text="*{notes}"></span>   
-                
-                <input type="hidden" name="noteId" th:value="*{id}"/>
-                <input type="submit" value="Edit" name="edit">
-                <input type="submit" value="Delete" name="delete">   
+        <form method="get" action="" th:action="@{/viewNote}">
+            <div th:each="n: ${notes}">
+            <table>
+                <tr>
+                    <th>Title</th>
+                    <td th:text="${n.title}"></td>
+                </tr>
+                <tr>
+                    <th>Date</th>
+                    <td th:text="${n.date}"></td>
+                </tr>
+                <tr>
+                    <th>Course Name</th>
+                    <td th:text="${n.courseName}"></td>
+                </tr>
+                <tr>
+                    <th>Course Code</th>
+                    <td th:text="${n.courseCode}"></td>
+                </tr>
+                <tr>
+                    <th>Note</th>
+                    <td th:text="${n.notes}"></td>
+                </tr>
+                <input type="hidden" name="noteId" th:value="${n.id}"/>
+                <input type="submit" value="View Note" name="view">  
+            </table>
+                </div>
         </form>        
             
         <p><a href="/">Back to home</a></p>

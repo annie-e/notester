@@ -1,0 +1,44 @@
+<!--Hackville Project - Notester Html File - View Note List Page
+----Created by: Xiaoya Zou & Mihye Bang from Team Hamstarz
+----Created on: Jan 14-15, 2022
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+    <title>Add Notes</title>
+    <link rel="stylesheet" type="text/css" media="all" href="../static/css/style.css" th:href="@{/css/style.css}">
+    </link>
+</head>
+
+<body class="sub-screen">
+    <header>
+        <!--I am not sure about this part how to display the courses as navigation
+        <nav th:each="course : ${courses}">
+            <a href="#" th:text="${course}">Course names</a>
+        </nav>-->
+    </header>
+    <main>
+        <div class="notelist">
+            <form method="get" action="" th:action="@{/updateNote}" th:object="${viewNote}">
+                <p>Title: <span th:text="*{title}"></p> 
+                <p>Date: <span th:text="*{date}"></p>
+                <p>Course Name: <span th:text="*{course.courseName}"></p>
+                <p>Course Code: <span th:text="*{course.courseCode}"></p>
+                <p>Note:</p>
+                <textarea th:text="*{notes}"></textarea><br/>
+                
+                <input type="hidden" name="noteId" th:value="*{id}"/>
+                <input type="submit" value="Edit" name="edit">
+                <input type="submit" value="Delete" name="delete">
+            </form>
+        </div>
+        
+        <p><a href="/">Back to home</a></p>
+        
+    </main>
+    <footer>The footer</footer>
+</body>
+
+</html>

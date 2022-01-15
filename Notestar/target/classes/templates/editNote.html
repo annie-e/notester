@@ -18,7 +18,7 @@
     </header>
     <main>
         <div>
-            <form action="#" th:action="@{/redirect:/editNote}" method="post" th:object="${note}">
+            <form action="#" th:action="@{/editNote}" method="get" th:object="${note}">
                 <p>Title: <input type="text" th:field="*{title}"></p>
                 <p>Date: <input type="text" th:field="*{date}"></p>
                 <p>Course: <input type="text" th:field="*{course}"></p>

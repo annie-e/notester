@@ -1,7 +1,2 @@
-INSERT INTO courses (courseName, courseCode) 
-VALUES ('Database Design and Implement', 'DBAS27198');
-
-INSERT INTO notes (title, date, courseId) 
-VALUES ('Note 1', '01-01-2022', 1);
-	
-
+Insert INTO note (course_Code, course_name, date, notes, title)
+values ('PROG11111', 'Java1', '1-1-2022', 'Hello', 'java-note');

@@ -18,13 +18,13 @@
     </header>
     <main>
         <div>
-            <form action="#" th:action="@{/addNote}" method="get" th:object="${note}">
-                <p>Title: <input type="text" th:field="*{title}"></p>
-                <p>Date: <input type="text" th:field="*{date}"></p>
-                <p>Course Name: <input type="text" th:field="*{course.courseName}"></p>
-                <p>Course Code: <input type="text" th:field="*{course.courseCode}"></p>
+            <form method="get" action="" th:action="@{/addNote}" th:object="${note}">
+                <p>Title: <input type="text" name="title" th:field="*{title}"></p> 
+                <p>Date: <input type="text" name="date" th:field="*{date}"></p>
+                <p>Course Name: <input type="text" name="courseN" th:field="*{courseName}"></p>
+                <p>Course Code: <input type="text" name="courseC" th:field="*{courseCode}"></p>
                 <p>Note:</p>
-                <textarea th:field="*{notes}">Add a note here...</textarea><br>
+                <textarea name="notes" th:field="*{notes}">Add a note here...</textarea><br>
                 <input type="submit" value="Save" name="save">
                 <input type="submit" value="Cancel" name="cancel">
             </form>
