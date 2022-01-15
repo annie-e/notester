@@ -1,0 +1,63 @@
+<!--Hackville Project - Notester Html File - View Note List Page
+----Created by: Xiaoya Zou & Mihye Bang from Team Hamstarz
+----Created on: Jan 14-15, 2022
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+    <title>Add Notes</title>
+    <link rel="stylesheet" type="text/css" media="all" href="../static/css/style.css" th:href="@{/css/style.css}">
+    </link>
+</head>
+
+<body class="sub-screen">
+    <header>
+        <!--I am not sure about this part how to display the courses as navigation-->
+        <nav th:each="course : ${courses}">
+            <a href="#" th:text="${course}">Course names</a>
+        </nav>
+    </header>
+    <main>
+        <!-- need to fix the logic-->
+        <div th:object="${note}">
+            <ul>
+                <li th:text="${note.title}">title</li>
+                <li th:text="${note.date}">date</li>
+                <li th:text="${note.content}">note</li>
+            </ul>
+            <a href="#" th:href="@{/viewEachNote}">view</a>
+        </div>
+
+        <div class="notelist">
+            <p>Date</p>
+            <h3>Course Code Course Name</h3>
+        </div>
+
+        <div class="notelist">
+            <p>Date</p>
+            <h3>Course Code Course Name</h3>
+        </div>
+
+        <div class="notelist">
+            <p>Date</p>
+            <h3>Course Code Course Name</h3>
+        </div>
+
+        <div class="notelist">
+            <p>Date</p>
+            <h3>Course Code Course Name</h3>
+        </div>
+
+        <div class="notelist">
+            <p>Date</p>
+            <h3>Course Code Course Name</h3>
+        </div>
+
+        <p><a href="/">Back to home</a></p>
+    </main>
+    <footer>The footer</footer>
+</body>
+
+</html>

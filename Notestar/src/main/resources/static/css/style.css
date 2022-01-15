@@ -1,1 +1,64 @@
-@charset "ISO-8859-1";
+.index-screen {
+  align-items: flex-start;
+  display: flex;
+  width: 100%;
+  font-family: Sometype Mono;
+  color: #484646;
+  background-color: rgb(255, 255, 255);
+}
+
+.index-left {
+  height: 1024px;
+  width: 50%;
+  float: left;
+  position: absolute;
+}
+
+.index-description {
+  margin-left: 5%;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 27px;
+  color: #484646;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.index-hammie-img {
+  margin-top: 15%;
+  margin-left: 20%;
+}
+
+.index-right {
+  margin-left: 50%;
+  height: 1024px;
+  object-fit: cover;
+  position: relative;
+}
+
+.index-footer {
+  font-style: normal;
+}
+
+.sub-screen {
+  background-color: #dfd3c1;
+  color: #484646;
+  font-family: Sometype Mono;
+}
+
+.notelist {
+  background-color: #ece7de;
+  border: 1px solid rgb(153, 153, 153);
+  margin: 30px;
+  padding: 20px;
+}
+
+.container-note-detail {
+  
+}
+
+#notes-area {
+  width: 30%;
+  padding: 100px;
+  margin-top: 5px;
+}
