@@ -2,6 +2,7 @@ package ca.hackville.hamstarz.beans;
 import java.io.Serializable;
 
 import lombok.*;
+//Xiaoya
 
 @Data
 @NoArgsConstructor
