@@ -1,0 +1,43 @@
+<!--Hackville Project - Notester Html File - View Each Note Page
+----Created by: Xiaoya Zou & Mihye Bang from Team Hamstarz
+----Created on: Jan 14-15, 2022
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+    <title>Add Notes</title>
+    <link rel="stylesheet" type="text/css" media="all" href="../static/css/style.css" th:href="@{/css/style.css}">
+    </link>
+</head>
+<body class="sub-screen">
+    <header>
+
+    </header>
+    <main>
+        <!--fix!-->
+   <div class="container-note-detail">
+    <form action="">
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title"> 
+
+        <label for="date">Date</label>
+        <input type="text" id="date" name="date">
+
+        <label for="course">Course</label>
+        <input type="text" id="course" name="course"><br/>
+    
+
+        <label for="notes-area">Notes</label><br />
+        <textarea id="notes-area" name="notes-area"></textarea><br />
+
+        <input type="submit" value="Submit">
+    </form>
+</div>
+        <p><a href="./">Back to home</a></p>
+    </main>
+    <footer>The footer</footer>
+</body>
+
+</html>
