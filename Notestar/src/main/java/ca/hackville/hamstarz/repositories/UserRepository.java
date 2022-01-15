@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
@@ -55,19 +56,19 @@ public class UserRepository {
 		return roles;
 	}
 	
-	@Autowired
-	private BCryptPasswordEncoder passwordEncoder;
-	
-	public void addUser(String username, String password) {
-		
-		MapSqlParameterSource parameters = new MapSqlParameterSource();
-		String query = "INSERT INTO sec_user (userName, encryptedPassword, enabled) "
-				+ "VALUES (:user, :pass, 1)";
-		
-		parameters.addValue("user", username);
-		parameters.addValue("pass", passwordEncoder.encode(password));
-		jdbc.update(query, parameters);
-	}
+//	@Autowired
+//	private BCryptPasswordEncoder passwordEncoder;
+//	
+//	public void addUser(String username, String password) {
+//		
+//		MapSqlParameterSource parameters = new MapSqlParameterSource();
+//		String query = "INSERT INTO sec_user (userName, encryptedPassword, enabled) "
+//				+ "VALUES (:user, :pass, 1)";
+//		
+//		parameters.addValue("user", username);
+//		parameters.addValue("pass", passwordEncoder.encode(password));
+//		jdbc.update(query, parameters);
+//	}
 	
 	public void addRole(long userId, long roleId) {
 		
@@ -79,23 +80,6 @@ public class UserRepository {
 		
 		jdbc.update(query, parameters);
 	}
-	
-	public void deleteUser(User user) {
-		
-		MapSqlParameterSource parameters = new MapSqlParameterSource();
-		String query = "DELETE FROM sec_user WHERE userId=:id";
-		
-		parameters.addValue("id", user.getUserId());
-		jdbc.update(query, parameters);
-	}
-	
-	public void deleteUserRole(User user) {
-		
-		MapSqlParameterSource parameters = new MapSqlParameterSource();
-		String query = "DELETE FROM user_role WHERE userId=:id";
-		
-		parameters.addValue("id", user.getUserId());
-		jdbc.update(query, parameters);
-	}
+
 
 }
