@@ -1,3 +1,9 @@
+/*
+    Hackville Project - Notester Java File - Note.java
+    Created by: Team Hamstarz
+    Created on: Jan 14-15, 2022
+*/
+
 package ca.hackville.hamstarz.beans;
 
 import java.io.Serializable;
