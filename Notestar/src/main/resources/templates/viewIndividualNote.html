@@ -1,0 +1,62 @@
+<!--Hackville Project - Notester Html File - viewIndividualNote.html
+----Created by: Team Hamstarz
+----Created on: Jan 14-15, 2022
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+    <title>Add Notes</title>
+    <link rel="stylesheet" type="text/css" media="all" href="../static/css/style.css" th:href="@{/css/style.css}">
+    </link>
+</head>
+
+<body class="sub-screen">
+    <header>
+        <nav class="container-nav">
+            <a href="/viewNote" class="ctn navbutton">View my notes</a>
+            <a href="/addNote" class="ctn navbutton">Add notes</a>
+            <a href="/userIndex" class="ctn navbutton">Back to home</a>
+        </nav>
+    </header>
+    <main>
+        <div class="container-note">
+            <p class="view-detail-msg">View Note Details 💌 </p>
+            <div class="framebox">
+            <form method="get" action="" th:action="@{/updateNote}" th:object="${viewNote}">
+                <table>
+                    <tr>
+                        <th>Title:</th>
+                        <td><span th:text="*{title}"></td>
+                    </tr>
+                    <tr>
+                        <th>Date:</th>
+                        <td><span th:text="*{date}"></td>
+                    </tr>
+                    <tr>
+                        <th>Course Name:</th>
+                        <td><span th:text="*{courseName}"></td>
+                    </tr>
+                    <tr>
+                        <th>Course Code:</th>
+                        <td><span th:text="*{courseCode}"></td>
+                    </tr>
+                    <tr>
+                        <th>Note:</th>
+                    </tr>
+                </table>
+                <p th:text="*{notes}"></p><br/>
+                
+                <input type="hidden" name="noteId" th:value="*{id}"/>
+                <input type="submit" value="Edit" name="edit">
+                <input type="submit" value="Delete" name="delete">
+            </form>
+        </div>
+        </div>
+        
+    </main>
+    <div th:replace="fragments::footer"></div>
+</body>
+
+</html>

@@ -1,0 +1,191 @@
+/*
+    Hackville Project - Notester CSS File - style.css
+    Created by: Team Hamstarz
+    Created on: Jan 14-15, 2022
+*/
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+* {
+  font-family: "Nunito", sans-serif;
+  font-size: 20px;
+  color: #484646;
+}
+
+nav {
+  flex: 1;
+  padding-left: 200px;
+}
+
+nav ul li {
+  display: inline-block;
+  list-style: none;
+  margin: 0px 20px;
+}
+
+body {
+  background-color: #dfd3c1;
+  color: #484646;
+}
+
+/* .container-signup-credentials, .container-login-credentials (previously) */
+.container-credentials {
+  padding: 100px 200px;
+}
+
+.container-note {
+  padding: 100px 100px 10px 100px;
+}
+
+.credential-box {
+  border: 1px solid #ccc;
+
+  text-align: center;
+  width: 500px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+
+  margin-bottom: 15px;
+  display: inline-block;
+
+  align-items: center;
+  align-items: center;
+}
+
+#notes-area {
+  width: 965px;
+  height: 170px;
+  padding: 20px;
+  margin-top: 5px;
+}
+
+th {
+  text-align: left;
+}
+
+.navbutton {
+  margin-top: 70px;
+  margin-right: 20px;
+  float: right;
+}
+
+.container-nav {
+  padding-right: 250px;
+}
+
+.ctn {
+  padding: 8px 15px;
+  background: #cabca8;
+  border-radius: 30px;
+  color: #484646;
+}
+
+input[type="button"],
+input[type="submit"] {
+  background-color: rgb(151, 102, 113);
+  width: 500px;
+  border: 1px solid #ccc;
+  color: #ffffff;
+  padding: 12px 20px;
+  display: inline-block;
+  text-decoration: none;
+  box-sizing: border-box;
+  margin: 4px 2px;
+  cursor: pointer;
+  justify-content: center;
+}
+
+input[type="button"]:hover,
+input[type="submit"]:hover {
+  opacity: 0.7;
+}
+
+.plain-msg {
+  font-size: 40px;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.viewNote-msg,
+.view-detail-msg {
+  margin-top: 80px;
+  font-size: 40px;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.framebox {
+  flex: 50%;
+  padding: 70px;
+  margin: 10px 120px 10px 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f3e9da;
+  transition: all 0.75s;
+  border: 1px solid #d6c5ae;
+}
+
+#btn-signup,
+#btn-cancel,
+#btn-login {
+  margin-top: 30px;
+  margin-bottom: 40px;
+  width: 245px;
+}
+
+/*buttons for view notes*/
+#btn-view-note {
+  margin-top: 30px;
+  margin-bottom: 40px;
+  border-radius: 20px;
+  width: 130px;
+}
+
+  
+  #btn-course-code {
+  margin-top: 50px;
+  margin-bottom: 40px;
+  border-radius: 20px;
+  width: 100px;
+  display: inline-block;
+  white-space: nowrap;
+  padding: 0px 0px 0px 90px;
+}
+
+.footer-content {
+  text-align: center;
+}
+
+#viewNoteTable {
+    display: flex;
+    justify-content: center;
+}
+
+#viewNoteTable td,
+#viewNoteTable th {
+    text-align: center;
+    padding-right: 30px;
+}
+
+#btn-view-note {
+  padding: 5px;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  border-radius: 20px;
+  width: 110px;
+}
+
+#code {
+    background-color: rgb(151, 102, 113);
+    width: 130px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    color: #ffffff;
+    padding: 12px 20px;
+    display: inline-block;
+    text-decoration: none;
+    box-sizing: border-box;
+    margin: 4px 2px;
+    cursor: pointer;
+    justify-content: center;
+}

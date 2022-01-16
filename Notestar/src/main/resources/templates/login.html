@@ -1,0 +1,33 @@
+<!--Hackville Project - Notester Html File - login.html
+----Created by: Team Hamstarz
+----Created on: Jan 14-15, 2022
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+    <head>
+        <title>Login Page</title>
+        <link rel="stylesheet" type="text/css" media="all" href="/static/style.css" th:href="@{/css/style.css}">
+        </link>
+    </head>
+
+    <body class="sub-screen">
+
+        <div class="container-login-credentials">
+            <p class="plain-msg">Welcome Back 🐹</p>
+            <div class="framebox">
+            <form>
+                <input type="text" class="credential-box" id="login-username" placeholder="Email/Username" required><br />
+                <input type="password" class="credential-box" id="login-password" placeholder="Password" required><br />
+                <input type="submit" id="btn-login" formaction="/userIndex" value="Login">
+                <input type="submit" id="btn-cancel" formaction="#" value="Cancel">
+                <div class="account">Forget your password? <a href="/">>></a> </div>
+                <div class="account">Don't have an account <a href="/signup">>></a></div>
+            </form>
+            </div>
+        </div>
+
+    <div th:replace="fragments::footer"></div>
+</body>
+</html>

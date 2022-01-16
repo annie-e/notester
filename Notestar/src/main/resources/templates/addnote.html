@@ -1,0 +1,59 @@
+<!--Hackville Project - Notester Html File - addnote.html
+----Created by: Team Hamstarz
+----Created on: Jan 14-15, 2022
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+    <title>Add Notes</title>
+    <link rel="stylesheet" type="text/css" media="all" href="../static/css/style.css" th:href="@{/css/style.css}">
+    </link>
+</head>
+
+<body>
+    <header>
+        <nav class="container-nav">
+            <a href="/viewNote" class="ctn navbutton">View my notes</a>
+            <a href="/userIndex" class="ctn navbutton">Back to home</a>
+        </nav>
+    </header>
+    <main>
+        <div class="container-note"> 
+            <p class="plain-msg">Add your note 📝</p>
+            <div class="framebox">
+            <form method="get" action="" th:action="@{/addNote}" th:object="${note}">
+                <table>
+                    <tr>
+                        <th>Title: </th>
+                        <td><input type="text" name="title" th:field="*{title}"></td>
+                    </tr> 
+                    <tr>
+                        <th>Date: </th>
+                        <td><input type="text" name="date" th:field="*{date}"></td>
+                    </tr> 
+                    <tr>
+                        <th>Course Name: </th>
+                        <td><input type="text" name="courseN" th:field="*{courseName}"></td>
+                    </tr> 
+                    <tr>
+                        <th>Course Code: </th>
+                        <td><input type="text" name="courseC" th:field="*{courseCode}"></td>
+                    </tr>
+                    <tr>
+                        <th>Note: </th>
+                    </tr>
+                </table>
+                <textarea name="notes" th:field="*{notes}" id="notes-area">Add a note here...</textarea><br>
+                <input type="submit" value="Save" name="save">
+                <input type="submit" value="Cancel" name="cancel">
+            </form>
+        </div>
+        </div>    
+        
+    </main>
+    <div th:replace="fragments::footer"></div>
+</body>
+
+</html>
