@@ -1,0 +1,63 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap%27)");
+
+/* ===== Global ===== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #777575;
+  font-family: "Nunito", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(https://images.unsplash.com/flagged/photo-1574512468809-d05a4fd197fd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+  background-position: bottom;
+  background-size: cover; /* Full size background image */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-content {
+  margin-bottom: 150px;
+  text-align: center; /* To keep the herder text stay in the center */
+}
+
+.footer-content {
+  text-align: center; /* To keep the footer text stay in the center */
+  bottom: 0;
+}
+
+.header-content h2 {
+  font-size: 4vmin;
+}
+
+.line {
+  /* The line under the first title*/
+  width: 150px;
+  height: 4px;
+  background: #b28686;
+  margin: 10px auto;
+  border-radius: 5px;
+}
+
+.header-content h1 {
+  font-size: 7vmin;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.ctn {
+  padding: 8px 15px;
+  background: #dfd3c1;
+  border-radius: 30px;
+  color: #484646;
+}

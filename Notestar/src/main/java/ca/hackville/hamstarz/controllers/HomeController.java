@@ -52,7 +52,7 @@ public class HomeController {
     
     @RequestMapping(value = "/addNote", params = "cancel")
     public String cancel(){
-        return "redirect:/";
+        return "redirect:/userIndex";
     }
             
     @RequestMapping("/viewNote")
