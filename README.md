@@ -1,4 +1,4 @@
-# Hello Hamstarz! 
+# Notester by Hamstarz
 ## Inspiration 
 Our team, Hamstraz, has created a helpful tool for college students who are struggling to keep a record of their notes in an organized fashion. When entering college, the amount of information can quickly disorganize students' notes and become forever lost or forgotten. Therefore, Hamstarz has developed a simple solution: Notester. Notester is a web application that helps students to log their notes in an organized fashion. Users, who are called 'Hamsters' in Notester, can sign up and log in to their accounts and have access to different features such as adding new notes, viewing notes organized by course codes, and also interacting with other 'Hamsters' to motivate them in note-taking and studying.
 
